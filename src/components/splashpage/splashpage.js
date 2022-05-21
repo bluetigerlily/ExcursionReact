@@ -17,7 +17,10 @@ const Splashpage = () => {
 </svg>
       </div>
       <div className='titlecontainer'>
-        
+
+      
+
+
         </div>
   
   
