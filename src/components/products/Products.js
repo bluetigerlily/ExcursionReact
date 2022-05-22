@@ -12,12 +12,6 @@ import StarBorderIcon from "@mui/icons-material/StarBorder";
 
 export default function Products() {
 
-  const [value, setValue] = React.useState(2);
-
-  const handleChange = () => {
-    const value = this.state.value;
-    this.setState((prev) => ({value: !prev.value}));
-  };
     return (
     <Box sx={{  
         width: '100%',
