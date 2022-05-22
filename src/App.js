@@ -1,8 +1,11 @@
-import Mainpage from './components/mainpage/mainpage';
 import Splashpage from './components/splashpage/splashpage';
 import Navbar from './components/navbar/navbar';
 import React, { useState } from 'react';
 import './components/splashpage/splashpage.scss';
+import { ThemeProvider } from '@mui/material/styles';
+import { dark } from './components/themes/dark';
+import Products from './components/products/Products';
+import Booking from './components/booking/Booking';
 
 
 function App() {
@@ -14,8 +17,12 @@ const [isClicked, setClicked] = useState(false);
     case true:
       return (
         <div className="App">
-         <Navbar />
-         <Mainpage />
+          <ThemeProvider theme={dark}>
+            <Navbar position="static" color="primary" enableColorOnDark >
+            </Navbar>        
+            <Products />
+            <Booking />
+          </ThemeProvider>
         </div>
       );
     default:
