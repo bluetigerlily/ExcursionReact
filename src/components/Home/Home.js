@@ -6,27 +6,40 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import Typography from '@mui/material/Typography';
+import './Home.scss';
+import Image from '../..//assets/backgroundlineswhite.svg'
+
+
 
 export default function Home() {
   
-  
     return (
-<Box sx={{
-height: '100%',
-bgcolor: '#121212'
-}}
->
-      <Typography sx={{ fontSize: 95 }} color="text.primary" gutterBottom>
-          You Deserve Happiness
-        </Typography>
+    <div className='homecontainer'>
+      
+
+      
+
+      
 
     <Box sx={{  
         width: '100%',
         bgcolor: '#121212',
         display: 'flex',
         justifyContent: 'center',
+        backgroundImage: `url(${Image})`,
+        flexDirection: "column",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center center",
+			  backgroundSize: "cover",
+			  backgroundAttachment: "fixed",
         }}
      >
+     <Typography sx={{ 
+       fontSize: 80,
+       }}
+        color="text.primary" gutterBottom>
+          You Deserve Happiness
+        </Typography>
       <ImageList 
       variant="woven"
       cols={3}
@@ -61,9 +74,9 @@ bgcolor: '#121212'
         </ImageListItem>
         ))}
         
-      </ImageList>
-    </Box>
-    </Box>
+        </ImageList>
+      </Box>
+  </div>
   );
 }
 
