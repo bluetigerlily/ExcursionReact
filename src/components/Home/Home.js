@@ -82,9 +82,19 @@ const itemData = [
     img: 'https://images.unsplash.com/photo-1649805311860-19ecc244533f?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
     title: 'Byron Bay NSW, Australia',
   },
-  
- 
- 
+  {
+  img: 'https://images.unsplash.com/photo-1651945205231-d20282acba59?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
+  title: 'Serik, Turkey',
+},
+{
+  img: 'https://images.unsplash.com/photo-1652417928593-0e7234d2bbe0?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
+  title: 'Scheveningen Strand, Netherlands',
+},
+{
+  img: 'https://images.unsplash.com/photo-1652668130483-15121ec5b96d?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
+  title: 'Iran, Isfahan Province',
+  details: 'The Heart of Iran, the Cultural Superplex of the Isfahan Province Region.',
+},
  
 ];
 
@@ -92,19 +102,8 @@ const itemData = [
 
 
 // removed these to decrease loading times and also make way for text
-// {
-//   img: 'https://images.unsplash.com/photo-1651945205231-d20282acba59?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
-//   title: 'Serik, Turkey',
-// },
-// {
-//   img: 'https://images.unsplash.com/photo-1652417928593-0e7234d2bbe0?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
-//   title: 'Scheveningen Strand, Netherlands',
-// },
-// {
-//   img: 'https://images.unsplash.com/photo-1652668130483-15121ec5b96d?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
-//   title: 'Iran, Isfahan Province',
-//   details: 'The Heart of Iran, the Cultural Superplex of the Isfahan Province Region.',
-// },
+
+
 // {
 //   img: 'https://images.unsplash.com/photo-1652515076688-74514f941a2e?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
 //   title: 'Venice, Italy',
