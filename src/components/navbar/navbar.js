@@ -12,12 +12,12 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { Link } from "react-router-dom";
 
-
-
-const pages = ['Products', 'Coming Soon'];
+const pages = ['Products', 'Pricing', 'Booking' ];
 const settings = ['Login', 'Logout'];
 const preventDefault = (event) => event.preventDefault();
+
 
 
 const Navbar = () => {
@@ -96,7 +96,11 @@ const Navbar = () => {
 
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu} underline="hover">
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center">
+                    <Link style={{textDecoration: "none", color: "white"}} to={`/${page}`}>
+                      {page}
+                    </Link>
+                  </Typography>
                 </MenuItem>
               ))}
   
@@ -130,9 +134,9 @@ const Navbar = () => {
                 href={[page]}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >           
-            
-                {page}
-               
+                <Link style={{textDecoration: "none", color: "white"}}  to={`/${page}`}>
+                  {page}
+                </Link>
               </Button>
             ))}
           </Box>
@@ -161,7 +165,10 @@ const Navbar = () => {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography textAlign="center">
+                  <Link style={{textDecoration: "none", color: "white"}}  to={`/${setting}`}>
+                      {setting}
+                    </Link></Typography>
                 </MenuItem>
               ))}
             </Menu>

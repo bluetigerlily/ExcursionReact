@@ -33,7 +33,7 @@ export default function EnableColorOnDarkNavbar() {
         <AppBar position="static" color="primary" enableColorOnDark>
           {Navbar('enableColorOnDark')}
         </AppBar>
-        <AppBar position="static" color="primary">
+        <AppBar position="sticky" color="primary">
           {Navbar('default')}
         </AppBar>
     </Stack>

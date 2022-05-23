@@ -4,11 +4,11 @@ import React from 'react';
 import './components/splashpage/splashpage.scss';
 import { ThemeProvider } from '@mui/material/styles';
 import { dark } from './components/themes/dark';
-import Products from './components/products/Products';
+import Home from './components/Home/Home';
 import Booking from './components/booking/Booking';
-
-
-
+import { Route, Routes } from "react-router";
+import Pricing from "./components/pricing/Pricing";
+import Products from "./components/products/Products"
 
 class App extends React.Component {
 
@@ -31,9 +31,15 @@ render() {
         <div className="App">
           <ThemeProvider theme={dark}>
             <Navbar position="static" color="primary" enableColorOnDark >
-            </Navbar>        
-            <Products />
-            <Booking />
+            </Navbar>     
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/Products" element={<Products />} />
+                <Route path="/Pricing" element={<Pricing />} />
+                <Route path="/Booking" element={<Booking />} />
+
+            </Routes>   
+           
           </ThemeProvider>
         </div>
       );

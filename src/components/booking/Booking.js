@@ -4,7 +4,7 @@ export default function Booking() {
 
     return (
     <div>
-        
+        Booking Route
     </div>
         );
 }
