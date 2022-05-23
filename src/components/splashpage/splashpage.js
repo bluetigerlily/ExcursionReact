@@ -1,11 +1,18 @@
 import './splashpage.scss';
 import React from 'react';
 
-const Splashpage = () => {
- 
- 
+class Splashpage extends React.Component {
+  
+  
+  onTrigger = (event) => {
+    this.props.parentCallback(event.target.isClicked);
+    event.preventDefault();
+}
 
-  return (
+render() {
+  
+   return (
+     
   <div className="splashpage">
 
       <div className='mask'>
@@ -18,14 +25,15 @@ const Splashpage = () => {
       </div>
       <div className='titlecontainer'>
 
-      
-
-
         </div>
+        <div className='btncontainer'>
+              <button className='splashpagebtn' type='button' onClick={this.onTrigger}>
+                Start Your Adventure 
+              </button>
+        </div>
+    </div>
   
-  
-  </div>
   );
 }
-
+}
 export default Splashpage;

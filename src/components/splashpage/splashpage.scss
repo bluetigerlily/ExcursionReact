@@ -67,13 +67,13 @@
 }
 
 .btncontainer {
+    order: 1;
     display: flex;
     position: relative;
     min-height: 100%;
     min-width: 100%;
     justify-content: center;
     align-items: center;
-    bottom: -50rem;
 }
 
 
