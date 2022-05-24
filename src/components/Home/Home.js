@@ -28,10 +28,11 @@ export default function Home() {
 			  backgroundSize: "cover",
 			  backgroundAttachment: "fixed",
         m: 4,
+        
         }}
      >
      <Typography sx={{ 
-       fontSize: '7rem',
+       fontSize: '6.5rem',
               }}
         color="text.primary" gutterBottom>
           You Deserve Happiness

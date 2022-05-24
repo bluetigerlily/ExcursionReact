@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 
 
 const pages = ['Products', 'Pricing', 'Booking' ];
-const settings = ['Login', 'Logout'];
+const settings = ['Login'];
 const preventDefault = (event) => event.preventDefault();
 
 
