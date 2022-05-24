@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { IdentityContextProvider } from "react-netlify-identity-widget"
 
 
-const url = "https://jocular-madeleine-0bc72c.netlify.app/" // supply the url of your Netlify site instance with Identity enabled. VERY IMPORTANT
+const url = "https://your-identity-instance.netlify.com/"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

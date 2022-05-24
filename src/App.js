@@ -8,8 +8,8 @@ import Home from './components/Home/Home';
 import Booking from './components/booking/Booking';
 import { Route, Routes } from "react-router";
 import Pricing from "./components/pricing/Pricing";
-import Products from "./components/products/Products"
-
+import Products from "./components/products/Products";
+import Login from "./components/login/Login";
 
 
 class App extends React.Component {
@@ -39,6 +39,7 @@ render() {
                  <Route path="/Products" element={<Products />} />
                  <Route path="/Pricing" element={<Pricing />} />
                  <Route path="/Booking" element={<Booking />} />
+                 <Route path="/Login" element={<Login />} />
 
              </Routes>   
            

@@ -16,11 +16,6 @@ export default function Home() {
     return (
     <div className='homecontainer'>
       
-
-      
-
-      
-
     <Box
      sx={{  
         bgcolor: '#121212',
