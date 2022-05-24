@@ -13,17 +13,35 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from "react-router-dom";
+import { useIdentityContext } from 'react-netlify-identity-widget'
+
+export function Login() {
+  const { loginUser, signupUser } = useIdentityContext()
+  const formRef = React.useRef()
+  const signup = () => {
+    const email = formRef.current.email.value
+    const password = formRef.current.password.value
+    signupUser(email, password)
+      .then((user) => console.log("Success! Signed up", user))
+      .catch((err) => console.error(err))
+  }
+
+}
 
 const pages = ['Products', 'Pricing', 'Booking' ];
 const settings = ['Login', 'Logout'];
 const preventDefault = (event) => event.preventDefault();
 
 
-
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  
 
+  const IdentityModal = React.lazy(() => import("react-netlify-identity-widget"))
+  const identity = useIdentityContext()
+  const [dialog, setDialog] = React.useState(false)
+  const isLoggedIn = identity && identity.isLoggedIn
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -168,6 +186,14 @@ const Navbar = () => {
                   <Typography textAlign="center">
                   <Link style={{textDecoration: "none", color: "white"}}  to={`/${setting}`}>
                       {setting}
+
+                      <button className="btn" onClick={() => setDialog(isLoggedIn)}>
+        {isLoggedIn ? "LOG OUT" : "LOG IN"}
+      </button>
+      <React.Suspense fallback="loading...">
+        <IdentityModal showDialog={dialog} onCloseDialog={() => setDialog(false)} />
+      </React.Suspense>
+                  
                     </Link></Typography>
                 </MenuItem>
               ))}
