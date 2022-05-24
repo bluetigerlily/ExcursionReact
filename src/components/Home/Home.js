@@ -21,8 +21,8 @@ export default function Home() {
 
       
 
-    <Box sx={{  
-        width: '100%',
+    <Box
+     sx={{  
         bgcolor: '#121212',
         display: 'flex',
         justifyContent: 'center',
@@ -32,11 +32,12 @@ export default function Home() {
         backgroundPosition: "center center",
 			  backgroundSize: "cover",
 			  backgroundAttachment: "fixed",
+        m: 4,
         }}
      >
      <Typography sx={{ 
-       fontSize: 80,
-       }}
+       fontSize: '7rem',
+              }}
         color="text.primary" gutterBottom>
           You Deserve Happiness
         </Typography>
@@ -44,6 +45,7 @@ export default function Home() {
       variant="woven"
       cols={3}
       gap={10}
+      
       >
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
