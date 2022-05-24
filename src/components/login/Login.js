@@ -15,10 +15,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { dark } from '../themes/dark';
 
 
-
-
-const netlifyIdentity = require('netlify-identity-widget');
-
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
