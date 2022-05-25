@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 
 
 
-const pages = ['Products', 'Pricing', 'Booking' ];
+const pages = ['Home' ,'Products', 'Pricing', 'Booking' ];
 const settings = ['Login'];
 const preventDefault = (event) => event.preventDefault();
 
@@ -45,7 +45,7 @@ const Navbar = () => {
 
   return (
     <AppBar sx={{ bgcolor: 'black' }} position="sticky">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" >
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography

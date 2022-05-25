@@ -4,15 +4,23 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
-import StarBorderIcon from "@mui/icons-material/StarBorder";
+import StarIcon from '@mui/icons-material/Star';
 import Typography from '@mui/material/Typography';
 import './Home.scss';
 import Image from '../..//assets/backgroundlineswhite.svg'
 
 
 
-export default function Home() {
+export default function Home(props) {
+
+  const [Click, setOnClick] = React.useState(false);
   
+
+  const handleClick = () => {
+    setOnClick(!Click);
+  };
+ 
+
     return (
     <div className='homecontainer'>
       
@@ -30,19 +38,22 @@ export default function Home() {
         m: 4,
         
         }}
+        disableGutters
      >
+      
      <Typography sx={{ 
        fontSize: '6.5rem',
               }}
         color="text.primary" gutterBottom>
           You Deserve Happiness
         </Typography>
+      
       <ImageList 
       variant="woven"
       cols={3}
       gap={10}
-      
       >
+
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
           <img
@@ -51,21 +62,24 @@ export default function Home() {
             alt={item.title}
             loading="lazy"
           />
-         
 
           <ImageListItemBar
             title={item.title}
             subtitle={item.details}
             actionIcon={
-              <IconButton
-                sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+
+              
+              <IconButton 
+                onClick={handleClick}
                 aria-label={`info about ${item.title}`}
               >
-        <StarBorderIcon /> 
-       
+
+                <StarIcon  sx={{ color: `${(Click ? 'yellow' : '{rgba(255, 255, 255, 0.54)}')}`}} />
 
               </IconButton>
-            }
+       
+           }
+
             actionPosition="left"
           />
           
@@ -73,42 +87,41 @@ export default function Home() {
         ))}
         
         </ImageList>
+  
       </Box>
   </div>
   );
 }
 
-
 const itemData = [
  
-  {
-    img: 'https://images.unsplash.com/photo-1627537104682-15008df883ef?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
-    title: 'Mount Rushmore',
+    {
+      img: 'https://images.unsplash.com/photo-1627537104682-15008df883ef?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
+      title: 'Mount Rushmore',
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1648631272400-f2ff22de4545?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
+      title: 'Paris, France',
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1649805311860-19ecc244533f?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
+      title: 'Byron Bay NSW, Australia', 
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1651945205231-d20282acba59?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
+      title: 'Serik, Turkey',
   },
   {
-    img: 'https://images.unsplash.com/photo-1648631272400-f2ff22de4545?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
-    title: 'Paris, France',
+      img: 'https://images.unsplash.com/photo-1652417928593-0e7234d2bbe0?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
+      title: 'Scheveningen Strand, Netherlands',
   },
   {
-    img: 'https://images.unsplash.com/photo-1649805311860-19ecc244533f?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
-    title: 'Byron Bay NSW, Australia',
+     img: 'https://images.unsplash.com/photo-1652668130483-15121ec5b96d?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
+      title: 'Iran, Isfahan Province',
+      details: 'The Heart of Iran, the Cultural Superplex of the Isfahan Province Region.',
   },
-  {
-  img: 'https://images.unsplash.com/photo-1651945205231-d20282acba59?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
-  title: 'Serik, Turkey',
-},
-{
-  img: 'https://images.unsplash.com/photo-1652417928593-0e7234d2bbe0?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
-  title: 'Scheveningen Strand, Netherlands',
-},
-{
-  img: 'https://images.unsplash.com/photo-1652668130483-15121ec5b96d?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
-  title: 'Iran, Isfahan Province',
-  details: 'The Heart of Iran, the Cultural Superplex of the Isfahan Province Region.',
-},
- 
-];
-
+   
+  ];
 
 
 
