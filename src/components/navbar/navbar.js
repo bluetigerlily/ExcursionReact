@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 
 
 
-const pages = ['Home' ,'Products', 'Pricing', 'Booking' ];
+const pages = ['Home' , 'Pricing', 'Booking' ];
 const settings = ['Login'];
 const preventDefault = (event) => event.preventDefault();
 

@@ -8,7 +8,6 @@ import { Route, Routes } from "react-router";
 
 //components
 import Pricing from "./components/pricing/Pricing";
-import Products from "./components/products/Products";
 import Login from "./components/login/Login";
 import Home from './components/Home/Home';
 import Booking from './components/booking/Booking';
@@ -46,7 +45,6 @@ render() {
                 (<Route path="/" element={<Splashpage parentCallback={this.handleCallback} />}  />) 
                 }
                  <Route path="/Home" element={<Home />} />
-                 <Route path="/Products" element={<Products />} />
                  <Route path="/Pricing" element={<Pricing />} />
                  <Route path="/Booking" element={<Booking />} />
                  <Route path="/Login" element={<Login />} />
