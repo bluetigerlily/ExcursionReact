@@ -25,8 +25,8 @@ export default function Home(props) {
     <div className='homecontainer'>
       
     <Box
+    
      sx={{  
-        bgcolor: '#121212',
         display: 'flex',
         justifyContent: 'center',
         backgroundImage: `url(${Image})`,
@@ -35,14 +35,15 @@ export default function Home(props) {
         backgroundPosition: "center center",
 			  backgroundSize: "cover",
 			  backgroundAttachment: "fixed",
-        m: 4,
-        
+        px: 3,    
         }}
         disableGutters
      >
       
      <Typography sx={{ 
-       fontSize: '6.5rem',
+       fontSize: '5.5rem',
+       maxWidth: '55%',
+       m: '1rem'
               }}
         color="text.primary" gutterBottom>
           You Deserve Happiness
@@ -51,16 +52,25 @@ export default function Home(props) {
       <ImageList 
       variant="woven"
       cols={3}
-      gap={10}
+      gap={9}
+      sx={{
+        minHeight: '45rem',
+        minWidth: '20rem',
+      }}
       >
 
         {itemData.map((item) => (
-          <ImageListItem key={item.img}>
+          <ImageListItem  sx={{
+              boxShadow: 10,
+            }} 
+            key={item.img}>
           <img
             src={`${item.img}?w=248&fit=crop&auto=format`}
             srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
             alt={item.title}
             loading="lazy"
+           
+
           />
 
           <ImageListItemBar

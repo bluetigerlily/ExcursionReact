@@ -9,8 +9,7 @@ import Grid from '@mui/material/Grid';
 import StarIcon from '@mui/icons-material/StarBorder';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-
-
+import { shadows } from '@mui/system';
 
 const tiers = [
   {
@@ -33,7 +32,6 @@ const tiers = [
       '2 roundtrip tickets',
       '3 days filled with activities',
       '4 nights at one of our luxurious hotels',
-      'Complimentary Concierge Service',
     ],
     buttonText: 'Contact us',
     buttonVariant: 'contained',
@@ -57,28 +55,45 @@ const tiers = [
 export default function Pricing() {
 
     return (
-        <div>
-        <Box component="main" sx={{ pt: 8, pb: 6, bgcolor: '#b0bec5', height: '58.7rem'
+      <div className='pricingoutercontainer'>
+        <Box component="main" 
+        sx={{ 
+          pt: 8, 
+          pb: 30, 
+          height: '100%',
+          background: `linear-gradient(to bottom, #7c8490, #151515)`
+
         }}>
-        <Container disableGutters maxWidth="full" component="main" sx={{ pt: 8, pb: 6, bgcolor: '#b0bec5'
+        <Container maxWidth="full" component="main" className='textContainer' 
+        sx={{ 
+          pt: 5,
+          pb: 15,     
         }}>
         <Typography
           component="h1"
           variant="h2"
           align="center"
-          color="main"
+          color="#e4eff6"
+          fontSize='10rem'
           gutterBottom
         >
           Pricing
         </Typography>
-        <Typography variant="h5" align="center" color="secondary" component="p">
+        <Typography 
+        variant="h5" 
+        align="center" 
+        color="#e4eff6" 
+        component="p"
+        fontSize='2rem'
+        >
          Your dream vacation is just a click away. 
          It&apos;s simple and easy we offer three tiers of Travel Packages to anywhere in the world.
         </Typography>
       </Container>
 
 
-<Container maxWidth="full" disableGutters component="main" sx={{ bgcolor: '#b0bec5' }}>
+<Container maxWidth="full" component="main" sx={{       
+ }}>
         <Grid container spacing={5} alignItems="flex-end"  >
           {tiers.map((tier) => (
             // Enterprise card is full width at sm breakpoint
@@ -86,48 +101,66 @@ export default function Pricing() {
               item
               key={tier.title}
               xs={12}
-              sm={tier.title === 'Enterprise' ? 12 : 6}
+              sm={tier.title === 'Three Dream Vacations a Year' ? 12 : 6}
+              justifyContent="center" 
               md={4}
+              pb={10}
+
             >
-              <Card disableGutters>
+              <Card disableGutters sx={{
+                boxShadow: 22,
+                maxHeight: '25rem'
+                }}>
                 <CardHeader
                   title={tier.title}
                   subheader={tier.subheader}
-                  titleTypographyProps={{ align: 'center' }}
-                  action={tier.title === 'Pro' ? <StarIcon /> : null}
+                  titleTypographyProps={{ 
+                    align: 'center',
+                    color: '#151515',
+                     }}
+                  action={tier.title === 'Twice a Year Dream Vacation' ? <StarIcon /> : null}
                   subheaderTypographyProps={{
                     align: 'center',
+                    color: '#151515',
+
                   }}
+                  
                   sx={{
-                    backgroundColor: (theme) =>
-                      theme.palette.mode === 'light'
-                        ? theme.palette.grey[200]
-                        : theme.palette.grey[700],
+                        color: '#151515',
+                        bgcolor: "primary.main"  
+
+
                   }}
                 />
                 <CardContent>
-                  <Box
+                  <Box 
                     sx={{
                       display: 'flex',
                       justifyContent: 'center',
                       alignItems: 'baseline',
-                      mb: 2,
+                      mb: 1,
+                      margin: 'auto',
+                      
+
                     }}
-                  >
-                    <Typography component="h2" variant="h3" color="text.primary">
+                  > 
+                    <Typography component="h2" variant="h3" color="#e4eff6">
                       ${tier.price}
                     </Typography>
-                    <Typography variant="h6" color="text.secondary">
+                    <Typography variant="h6" color="#e4eff6">
                       /mo
                     </Typography>
                   </Box>
                   <ul>
                     {tier.description.map((line) => (
                       <Typography
-                        component="li"
+                        component="ol"
                         variant="subtitle1"
                         align="center"
                         key={line}
+                        pl={0}
+                        pr={4}
+                      
                       >
                         {line}
                       </Typography>

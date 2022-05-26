@@ -3214,6 +3214,11 @@ cjs-module-lexer@^1.0.0:
   resolved "https://registry.npmjs.org/cjs-module-lexer/-/cjs-module-lexer-1.2.2.tgz"
   integrity sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==
 
+classnames@^1.2.0:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-1.2.2.tgz#e96a2a0222d84925dd8fadb205d66e12f888edf9"
+  integrity sha512-aGuzgdoQvsYMu3gfdPyCqb0KadipwsvWTRlODYoLckoHCQHmIg7iyEiGpIVmi1odvqXD1ynokF00m5KEPoEwGg==
+
 clean-css@^5.2.2:
   version "5.3.0"
   resolved "https://registry.npmjs.org/clean-css/-/clean-css-5.3.0.tgz"
@@ -6155,6 +6160,15 @@ makeerror@1.0.12:
   dependencies:
     tmpl "1.0.5"
 
+material-ui-with-sass@^0.1.17:
+  version "0.1.17"
+  resolved "https://registry.yarnpkg.com/material-ui-with-sass/-/material-ui-with-sass-0.1.17.tgz#3739a01c6e3bdf54ad60d2785791a6d78ae05cfa"
+  integrity sha1-NzmgHG4731StYNJ4V5Gm14rgXPo=
+  dependencies:
+    classnames "^1.2.0"
+    react-draggable2 "^0.5.1"
+    underscore "^1.8.3"
+
 mdn-data@2.0.14:
   version "2.0.14"
   resolved "https://registry.npmjs.org/mdn-data/-/mdn-data-2.0.14.tgz"
@@ -7438,6 +7452,11 @@ react-dom@^18.1.0:
     loose-envify "^1.1.0"
     scheduler "^0.22.0"
 
+react-draggable2@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/react-draggable2/-/react-draggable2-0.5.1.tgz#1bc8f65929f9d1a1e43267f894e76ab4af8ea387"
+  integrity sha1-G8j2WSn50aHkMmf4lOdqtK+Oo4c=
+
 react-error-overlay@^6.0.11:
   version "6.0.11"
   resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.11.tgz"
@@ -8618,6 +8637,11 @@ unbox-primitive@^1.0.2:
     has-bigints "^1.0.2"
     has-symbols "^1.0.3"
     which-boxed-primitive "^1.0.2"
+
+underscore@^1.8.3:
+  version "1.13.3"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.13.3.tgz#54bc95f7648c5557897e5e968d0f76bc062c34ee"
+  integrity sha512-QvjkYpiD+dJJraRA8+dGAU4i7aBbb2s0S3jA45TFOvg2VgqvdCDd/3N6CqA8gluk1W91GLoXg5enMUx560QzuA==
 
 unicode-canonical-property-names-ecmascript@^2.0.0:
   version "2.0.0"

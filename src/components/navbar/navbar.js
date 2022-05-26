@@ -44,7 +44,9 @@ const Navbar = () => {
 
 
   return (
-    <AppBar sx={{ bgcolor: 'black' }} position="sticky">
+    <AppBar sx={{ 
+      bgcolor: '#4f5057', 
+      }} position="sticky">
       <Container maxWidth="xl" >
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -59,7 +61,7 @@ const Navbar = () => {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: '#e4eff6',
               textDecoration: 'none',
             }}
           >
@@ -92,14 +94,18 @@ const Navbar = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { 
+                  xs: 'block',
+                  md: 'none',
+                  bgColor: '#4f5057',
+                  },
               }}
             >
 
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu} underline="hover">
                   <Typography textAlign="center">
-                    <Link style={{textDecoration: "none", color: "white"}} to={`/${page}`}>
+                    <Link style={{textDecoration: "none", color: "#e4eff6"}} to={`/${page}`}>
                       {page}
                     </Link>
                   </Typography>
@@ -121,7 +127,7 @@ const Navbar = () => {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: '#e4eff6',
               textDecoration: 'none',
             }}
           >
@@ -134,9 +140,9 @@ const Navbar = () => {
                 key={page}
                 onClick={handleCloseNavMenu}
                 href={[page]}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: '#e4eff6', display: 'block' }}
               >           
-                <Link style={{textDecoration: "none", color: "white"}}  to={`/${page}`}>
+                <Link style={{textDecoration: "none", color: "#e4eff6"}}  to={`/${page}`}>
                   {page}
                 </Link>
               </Button>
@@ -150,7 +156,9 @@ const Navbar = () => {
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: '45px' }}
+              sx={{ 
+                mt: '45px',
+                }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
@@ -166,9 +174,11 @@ const Navbar = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <MenuItem key={setting} onClick={handleCloseUserMenu} sx={{
+                  bgColor: '#5e5f65',
+                }}>
                   <Typography textAlign="center">
-                    <Link style={{textDecoration: "none", color: "white"}}  to={`/${setting}`}>
+                    <Link style={{textDecoration: "none", color: "inherit"}}  to={`/${setting}`}>
                       {setting}
                    </Link>
                   </Typography>
