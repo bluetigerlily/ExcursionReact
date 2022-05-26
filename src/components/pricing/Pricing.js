@@ -9,7 +9,6 @@ import Grid from '@mui/material/Grid';
 import StarIcon from '@mui/icons-material/StarBorder';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { shadows } from '@mui/system';
 
 const tiers = [
   {
