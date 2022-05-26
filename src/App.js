@@ -11,6 +11,7 @@ import Pricing from "./components/pricing/Pricing";
 import Login from "./components/login/Login";
 import Home from './components/Home/Home';
 import Booking from './components/booking/Booking';
+import Register from './components/register/Register';
 
 class App extends React.Component {
 
@@ -48,6 +49,7 @@ render() {
                  <Route path="/Pricing" element={<Pricing />} />
                  <Route path="/Booking" element={<Booking />} />
                  <Route path="/Login" element={<Login />} />
+                 <Route path="/Register" element={<Register />} />
              </Routes>   
             
           </ThemeProvider>
