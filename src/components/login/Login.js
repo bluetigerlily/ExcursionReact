@@ -3,6 +3,7 @@ import { useRef, useState, useEffect, useContext} from 'react';
 import AuthContext from '../../context/AuthProvider';
 import axios from '../../api/axios';
 import { Link } from "react-router-dom";
+import './Login.scss'
 
 const LOGIN_URL = '/Login';
 
@@ -65,25 +66,27 @@ export default function Login() {
   return (
     <>
     {success ? (
-        <section>
-            <h1>You are logged in!</h1>
+        <section className='loginSection'>
+            <h1 className='loginTitle'>You are logged in!</h1>
             <br />
-            <p>
+            <p className='loginPara'>
             <Link style={{textDecoration: "none", color: "black"}}  to={`/Home`}>
                 Go Home
                    </Link>           
             </p>
         </section>
     ) : (
-        <section>
+        <section className='loginSection'>
+          <div className='loginContainer'>
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} 
             aria-live="assertive">{errMsg}</p>
-            <h1>Sign In</h1>
-            <form onSubmit={handleSubmit}>
+            <h1 className='loginSignin'>Sign In</h1>
+            <form className='loginForm' onSubmit={handleSubmit}>
                 <label htmlFor="username">Username:</label>
                 <input
                     type="text"
                     id="username"
+                    placeholder='Username'
                     ref={userRef}
                     autoComplete="off"
                     onChange={(e) => setUser(e.target.value)}
@@ -95,20 +98,22 @@ export default function Login() {
                 <input
                     type="password"
                     id="password"
+                    placeholder='Password'
                     onChange={(e) => setPwd(e.target.value)}
                     value={pwd}
                     required
                 />
-                <button>Sign In</button>
+                <button className='signinBtn'>Sign In</button>
             </form>
-            <p>
+            <p className='needanAccount'>
                 Need an Account?<br />
-                <span className="line">
+                <span className="linkSignup">
                 <Link style={{textDecoration: "none", color: "black"}}  to={`/Register`}>
                 Sign Up
                    </Link>                    
                 </span>
             </p>
+            </div>
         </section>
     )}
 </>

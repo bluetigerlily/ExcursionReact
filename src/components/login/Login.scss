@@ -1,0 +1,24 @@
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    row-gap: 1rem;
+}
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    font-size: 2rem;
+}
+
+input {
+    font-size: 1.1rem;
+}
+
+
+label {
+    text-align: left;
+}
