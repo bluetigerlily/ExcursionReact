@@ -1,0 +1,62 @@
+.registerSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    row-gap: .5rem;
+    font-size: 1rem;
+}
+.registerTitle {
+    font-size: 3rem;
+}
+
+.registerForm {
+    display: flex;
+    font-size: 1.3rem;
+    flex-direction: column;
+    row-gap: 1rem;
+
+}
+    .signUpBtn {
+    width: 40%;
+    align-self: center;
+}
+#confirmnote {
+    visibility: collapse;
+    color: green;
+}
+.icon {
+    visibility: visible;
+    cursor: pointer;
+}
+.icon:hover {
+    #confirmnote {    
+    visibility: revert;
+    }}
+
+#uidnote {
+    visibility: collapse;
+    color: green;
+}
+.icon {
+    visibility: visible;
+    cursor: pointer;
+}
+.icon:hover {
+    #uidnote {
+        visibility: revert;
+    }
+}
+#pwdnote {
+    visibility: collapse;
+    color: green;
+}
+.icon {
+    cursor: pointer;
+    visibility: visible;
+}
+.icon:hover {
+    #pwdnote {
+        visibility: revert;
+    }
+}

@@ -3,6 +3,7 @@ import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import  axios from '../../api/axios';
+import './Register.scss';
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -87,27 +88,26 @@ const Register = () => {
         <>
             {success ? (
                 <section>
-                    <h1>Success!</h1>
-                    <p>
+                    <h1 className="registerSuccess">Success!</h1>
+                    <p className="registerParaLoginLink">
                     <Link style={{textDecoration: "none", color: "black"}}  to={`/Login`}>
                 Login
                    </Link>                        </p>
                 </section>
             ) : (
-                <section>
+                <section className="registerSection">
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1>Register</h1>
-                    <form onSubmit={handleSubmit}>
+                    <h1 className="registerTitle">Register</h1>
+                    <form className="registerForm" onSubmit={handleSubmit}>
                         <label htmlFor="username">
                             Username:
-                            <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
-                            <FontAwesomeIcon icon={faTimes} className={validName || !user ? "hide" : "invalid"} />
                         </label>
                         <input
                             type="text"
                             id="username"
                             ref={userRef}
                             autoComplete="off"
+                            placeholder="Username"
                             onChange={(e) => setUser(e.target.value)}
                             value={user}
                             required
@@ -116,22 +116,22 @@ const Register = () => {
                             onFocus={() => setUserFocus(true)}
                             onBlur={() => setUserFocus(false)}
                         />
+                        <div className="icon">
+                        <FontAwesomeIcon icon={faInfoCircle} className="icon" />
                         <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
-                            <FontAwesomeIcon icon={faInfoCircle} />
                             4 to 24 characters.<br />
                             Must begin with a letter.<br />
                             Letters, numbers, underscores, hyphens allowed.
                         </p>
-
+                        </div>
 
                         <label htmlFor="password">
                             Password:
-                            <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
-                            <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
                         </label>
                         <input
                             type="password"
                             id="password"
+                            placeholder="Password"
                             onChange={(e) => setPwd(e.target.value)}
                             value={pwd}
                             required
@@ -140,22 +140,22 @@ const Register = () => {
                             onFocus={() => setPwdFocus(true)}
                             onBlur={() => setPwdFocus(false)}
                         />
+                        <div className="icon">
+                        <FontAwesomeIcon icon={faInfoCircle} className="icon" />
                         <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
-                            <FontAwesomeIcon icon={faInfoCircle} />
                             8 to 24 characters.<br />
                             Must include uppercase and lowercase letters, a number and a special character.<br />
                             Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
                         </p>
-
+                        </div>
 
                         <label htmlFor="confirm_pwd">
                             Confirm Password:
-                            <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "valid" : "hide"} />
-                            <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} />
                         </label>
                         <input
                             type="password"
                             id="confirm_pwd"
+                            placeholder="Confirm Password"
                             onChange={(e) => setMatchPwd(e.target.value)}
                             value={matchPwd}
                             required
@@ -164,16 +164,18 @@ const Register = () => {
                             onFocus={() => setMatchFocus(true)}
                             onBlur={() => setMatchFocus(false)}
                         />
+                        <div className="icon">
+                        <FontAwesomeIcon className="icon" icon={faInfoCircle} />
                         <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
-                            <FontAwesomeIcon icon={faInfoCircle} />
                             Must match the first password input field.
                         </p>
+                        </div>
 
-                        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
+                        <button className="signUpBtn" disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
                     </form>
-                    <p>
+                    <p className="alreadyRegistered">
                         Already registered?<br />
-                        <span className="line">
+                        <span className="linkLogin">
                         <Link style={{textDecoration: "none", color: "black"}}  to={`/Login`}>
                 Sign In Here
                    </Link>    

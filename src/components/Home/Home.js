@@ -10,11 +10,9 @@ import './Home.scss';
 import Image from '../..//assets/backgroundlineswhite.svg'
 
 
-
 export default function Home(props) {
 
   const [Click, setOnClick] = React.useState(false);
-  
 
   const handleClick = () => {
     setOnClick(!Click);
@@ -69,22 +67,20 @@ export default function Home(props) {
             srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
             alt={item.title}
             loading="lazy"
-           
-
           />
-
           <ImageListItemBar
             title={item.title}
             subtitle={item.details}
             actionIcon={
 
-              
               <IconButton 
                 onClick={handleClick}
                 aria-label={`info about ${item.title}`}
               >
+            
 
-                <StarIcon  sx={{ color: `${(Click ? 'yellow' : '{rgba(255, 255, 255, 0.54)}')}`}} />
+              <StarIcon  sx={{ color: `${(Click ? 'yellow' : '{rgba(255, 255, 255, 0.54)}')}`}} />
+
 
               </IconButton>
        

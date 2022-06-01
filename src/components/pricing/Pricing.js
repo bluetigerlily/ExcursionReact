@@ -17,8 +17,7 @@ const tiers = [
     description: [
       '1 roundtrip ticket',
       '2 days filled with activities',
-      '3 nights at one of our luxurious hotels',
-      'Email support',
+      '3 nights at one of our Luxurious Hotels',
     ],
     buttonText: 'Contact us',
     buttonVariant: 'outlined',
@@ -29,8 +28,8 @@ const tiers = [
     price: '200',
     description: [
       '2 roundtrip tickets',
-      '3 days filled with activities',
-      '4 nights at one of our luxurious hotels',
+      '3 days of Activities',
+      '4 nights at one of our Luxurious Hotels',
     ],
     buttonText: 'Contact us',
     buttonVariant: 'contained',
@@ -40,9 +39,9 @@ const tiers = [
     price: '300',
     description: [
       '3 round trip tickets',
-      '4 days filled with activties',
-      '5 nights at one of our luxurious hotels',
-      'Priority Concierge Service',
+      '4 days of Activties',
+      '5 nights at one of our Luxurious Hotels',
+      'Concierge Service',
     ],
     buttonText: 'Contact us',
     buttonVariant: 'outlined',
